@@ -64,12 +64,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Cursor.visible = true;
             }
         }
-
+        
         public void UpdateCursorLock()
         {
             //if the user set "lockCursor" we check & properly lock the cursos
             if (lockCursor)
                 InternalLockUpdate();
+
+            
+            if (MainHouseEnter.isShowCursor)
+            {
+                InternalLockUpdate(MainHouseEnter.isShowCursor);
+            }
         }
 
         private void InternalLockUpdate()
@@ -94,6 +100,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Cursor.visible = true;
             }
         }
+
+        private void InternalLockUpdate(bool value)
+        {
+            if (!value)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else if (value)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+        }
+
 
         Quaternion ClampRotationAroundXAxis(Quaternion q)
         {
