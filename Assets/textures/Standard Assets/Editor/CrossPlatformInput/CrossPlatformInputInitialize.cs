@@ -23,7 +23,6 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
             }
         }
 
-
         [MenuItem("Mobile Input/Enable")]
         private static void Enable()
         {
@@ -47,7 +46,6 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                     break;
             }
         }
-
 
         [MenuItem("Mobile Input/Enable", true)]
         private static bool EnableValidate()
@@ -89,16 +87,15 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
             };
 
         private static BuildTargetGroup[] mobileBuildTargetGroups = new BuildTargetGroup[]
-            {
-                BuildTargetGroup.Android,
-                BuildTargetGroup.iOS,
-                BuildTargetGroup.PSM, 
-                BuildTargetGroup.SamsungTV,
-                BuildTargetGroup.Tizen,
-                BuildTargetGroup.WSA 
-            };
-
-
+        {
+            BuildTargetGroup.Android,
+            BuildTargetGroup.iOS,
+            BuildTargetGroup.PSM, 
+            BuildTargetGroup.SamsungTV,
+            BuildTargetGroup.Tizen,
+            BuildTargetGroup.WSA 
+        };
+        
         private static void SetEnabled(string defineName, bool enable, bool mobile)
         {
             //Debug.Log("setting "+defineName+" to "+enable);
@@ -128,7 +125,6 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                 PlayerSettings.SetScriptingDefineSymbolsForGroup(group, definesString);
             }
         }
-
 
         private static List<string> GetDefinesList(BuildTargetGroup group)
         {
