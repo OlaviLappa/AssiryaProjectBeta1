@@ -71,10 +71,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (lockCursor)
                 InternalLockUpdate();
 
-            
-            if (MainHouseEnter.isShowCursor)
+            if (GetCursor.isShowCursor)
             {
-                InternalLockUpdate(MainHouseEnter.isShowCursor);
+                InternalLockUpdate(GetCursor.isShowCursor);
             }
         }
 

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-    public class MainHouseEnter : MonoBehaviour
+    public class MainHouseEnter : GetCursor
     {
 
         [SerializeField] private GameObject _confirmWindow;       
@@ -16,8 +16,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         [SerializeField] private FirstPersonController firstPersonController;
         [SerializeField] private CharacterController characterController;
-
-        public static bool isShowCursor = false;
 
 
         private void Awake()
